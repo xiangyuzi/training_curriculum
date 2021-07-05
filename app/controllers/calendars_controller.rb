@@ -2,7 +2,7 @@ class CalendarsController < ApplicationController
 
   # １週間のカレンダーと予定が表示されるページ
   def index
-    getWeek
+     get_week  #Issue2で変更 getWeek
     @plan = Plan.new
   end
 
@@ -18,7 +18,7 @@ class CalendarsController < ApplicationController
     params.require(:plan).permit(:date, :plan)  #Issue4 require(:calender)を修正。calenderモデルは無い。
   end
 
-  def getWeek
+  def get_week   #Issue2で変更 getWeek
     wdays = ['(日)','(月)','(火)','(水)','(木)','(金)','(土)']
     
 
